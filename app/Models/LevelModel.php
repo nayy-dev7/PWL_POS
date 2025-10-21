@@ -2,13 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LevelModel extends Model
 {
-    public function users(): BelongsTo
+    protected $table = 'm_level'; 
+    protected $primaryKey = 'level_id'; 
+    public $timestamps = false; 
+
+    public function users(): HasMany
     {
-        return $this->belongsTo(UserModel::class);
+        return $this->hasMany(UserModel::class, 'level_id', 'level_id');
     }
 }
