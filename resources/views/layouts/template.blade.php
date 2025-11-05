@@ -90,6 +90,18 @@
         }
     });
 </script>
+<script>
+function modalAction(url) {
+  $('#myModal').modal('show');
+  $('#modal-content').load(url);
+}
+</script>
+
+<!-- Modal Global untuk Form AJAX -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div id="modal-content"></div>
+</div>
+
 @stack('js')
 </body>
 </html>
